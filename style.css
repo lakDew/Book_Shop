@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+*{
+    margin:0px;
+    padding: 0px;
+}
+.top-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(252 252 252);
+    padding: 20px 30px;
+    position: relative;
+    box-shadow: 0px 0px 5px 1px  rgb(182, 176, 176);;
+}
+
+.top-section .logo{
+    width: 80px;
+}
+
+.top-section .logo img{
+    width: 100%;
+}
+.top-section .search-bar{
+    display: flex;
+    width: 40%;
+    border: 1px solid #E42B26; 
+    border-radius: 5px;
+    margin-right: 250px;
+    margin-left: 50px;
+    position: relative;
+}
+
+.top-section .search-bar input{
+    border-radius: 4px;
+    width:100%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    
+
+}
+.top-section .search-bar input::placeholder{
+    color: #E42B26;
+    
+
+}
+.top-section .search-bar i{
+    
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    background-color: #E42B26;
+    padding: 10.5px 13px;
+    
+}
+
+.top-section .right-section{
+    display: flex;
+}
+.top-section .right-section .profile i{
+    font-size: 25px;
+    padding: 12px 14px;
+    background-color: #E42B26;
+    font-weight: 600;
+    margin: 0px 10px;
+    color: white;
+    border-radius: 50%;
+
+}
+
+.top-section .right-section .cart-logo i{
+    font-size: 30px;
+    padding: 12px 14px;
+    font-weight: 600;
+    margin: 0px 10px;
+    color:  #E42B26
+    
+}
+.suggestion{
+    position: absolute;
+    top:50px;
+    left: 0px;
+    right: 0px;
+    border: 1px solid #E42B26;
+    background-color:#f3f2f2;
+    padding-top: 20px;
+    
+}
+.suggested_item{
+    font-size: 20px;
+    border-bottom: 1px solid #E42B26;
+    padding: 5px 10px ;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.suggested_item:hover{
+    transform:scaleY(1.2);
+}
+.suggested_item:last-child{
+    margin-bottom: 0px;
+    border-bottom: none;
+}
+.none{
+    display: none;
+}
+#arrow{
+display: inline-block;
+height: 0px;
+width: 0px;
+border-top:8px solid  white;
+border-left:8px solid transparent;
+border-right:8px solid transparent;
+transition: 0.5s linear;
+
+}
+.nav-bar .left-sec{
+    display: flex;
+    color: white;
+    font-size: 22px;
+    align-items: center;
+    
+}
+.nav-bar .left-sec div{
+    margin-right: 40px;
+}
+.nav-bar .left-sec span:nth-child(2){
+    margin-left: 9px;
+}
+.nav-bar .left-sec .drop-down{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-bar{
+    margin-top: 5px;
+    background-color: #E42B26;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+.nav-bar .right-sec{
+    width: 55px;
+
+} 
+.nav-bar .right-sec img{
+    width: 100%;
+}
+.nav-bar .left-sec  div:hover{
+    font-weight: 800;
+    cursor: pointer;
+
+}
+.drop-down:hover .drop-content{
+    font-weight: normal;
+}
+ .drop-content:hover p{
+   font-weight: normal;
+}
+.nav-bar .left-sec .drop-content{
+    position: absolute;
+    background-color: #f3f2f2;
+    top:48px;
+    left: 0px;
+    color: #E42B26;
+    width: 250px;
+    padding-top: 10px ;
+    box-shadow: 0px 0px 7px 2px #E42B26;
+    transition: 0.5s linear;
+    transform-origin: top;
+}
+.nav-bar .left-sec .drop-content .drop-item{
+    padding: 10px 10px;
+    font-size: 19px;
+    border-bottom: 1px solid #E42B26;
+    font-family: 'Caveat Brush', cursive;
+    cursor: pointer;
+}
+.nav-bar .left-sec .drop-content .drop-item:hover{
+    transform: scaleY(1.2);
+    font-weight: 700;
+}
+.hide{
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+
+@media only screen and (max-width: 990px) {
+   
+    .top-section .search-bar{
+        display: flex;
+        width: 50%;
+        border: 1px solid #E42B26; 
+        border-radius: 4px;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+  }
+
+  @media only screen and (max-width: 760px) {
+    
+    .top-section{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(252 252 252);
+        padding: 10px 10px;
+        position: relative;
+        box-shadow: 0px 0px 5px 1px  rgb(182, 176, 176);;
+    }
+   
+    .top-section .search-bar{
+        display: flex;
+        width: auto;
+        border: 1px solid #E42B26; 
+        border-radius: 4px;
+        margin-right: 0px;
+        margin-left: 0px;
+        position: absolute;
+        
+        top:110px;
+        left:40px;
+        right: 40px;
+    }
+    .nav-bar{
+        margin-top: 80px;
+        background-color: #E42B26;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 10px;
+    }
+  }
+
+  @media only screen and (max-width: 560px){
+    .top-section .search-bar{
+        display: flex;
+        width: auto;
+        border: 1px solid #E42B26; 
+        border-radius: 4px;
+        margin-right: 0px;
+        margin-left: 0px;
+        position: absolute;
+        top:90px;
+        left:20px;
+        right: 20px;
+    }
+    .top-section .logo{
+        width: 60px;
+    }
+    .top-section .right-section .profile i{
+        font-size: 20px;
+        padding: 12px 14px;
+        background-color: #E42B26;
+        font-weight: 600;
+        margin: 0px 10px;
+        color: white;
+        border-radius: 50%;
+    
+    }
+    
+    .top-section .right-section .cart-logo i{
+        font-size: 25px;
+        padding: 12px 0px;
+        font-weight: 600;
+        margin: 0px 10px;
+        color:  #E42B26
+        
+    }
+    .nav-bar .right-sec{
+        width: 45px;
+    
+    }
+    .nav-bar .left-sec{
+        display: flex;
+        color: white;
+        font-size: 19px;
+        align-items: center;
+        
+    }
+    .nav-bar .left-sec div{
+        margin-right: 25px;
+    }
+    .nav-bar .left-sec .drop-content{
+        position: absolute;
+        background-color: #f3f2f2;
+        top:42px;
+        left: 0px;
+        color: #E42B26;
+        width: 250px;
+        padding-top: 10px ;
+        box-shadow: 0px 0px 7px 2px #E42B26;
+    }
+    #arrow{
+        display: inline-block;
+        height: 0px;
+        width: 0px;
+        border-top:6px solid  white;
+        border-left:6px solid transparent;
+        border-right:6px solid transparent;
+        transition: 0.5s linear;
+        
+        
+        }
+   
+  }
