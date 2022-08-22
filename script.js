@@ -5,6 +5,7 @@ $.get('https://where-is-my-book-services.onrender.com/api/products/product/all',
     searchBar(data.allProducts)
 })
 
+
 document.querySelector('body').addEventListener('click',function(e){
     if(e.target.classList[0]!='suggested_item'&&e.target.classList[0]!='search-field'&&e.target.classList[0]!='search-icon'){
         document.querySelector('.suggestion').classList.add('none');
@@ -20,9 +21,26 @@ document.querySelector('body').addEventListener('click',function(e){
         document.querySelector('#arrow').style.transform='rotate(0deg)';
         }
     }
-})
-function searchBar(data){
 
+    if(e.target.classList[0]!='drop-demo-author'&&e.target.classList[0]!='drop-item-author'){
+        let drop= document.querySelector('.drop-content-author');
+        if(drop.classList[1]!='hide'){
+            drop.classList.add('hide');
+            document.querySelector('#arrow-author').style.transform='rotate(0deg)';
+            }
+        }
+})
+
+
+document.querySelector('.right-sec').addEventListener('mouseover',function(e){
+    document.querySelector('.right-sec img').src='https://d2g9wbak88g7ch.cloudfront.net/staticimages/android_withhover.svg';
+})
+document.querySelector('.right-sec').addEventListener('mouseout',function(e){
+    document.querySelector('.right-sec img').setAttribute('src','https://d2g9wbak88g7ch.cloudfront.net/staticimages/android_withouthover.svg')
+})
+
+
+function searchBar(data){
 let search=document.querySelector('input[type=text]');
 search.addEventListener('input',function(e){
    emptySuggestion();
@@ -56,6 +74,8 @@ search.addEventListener('input',function(e){
     }
 }
 })
+
+
 document.querySelector('.search-icon').addEventListener('click',function(e){
     let found;
     for( let item of data){
@@ -64,6 +84,7 @@ document.querySelector('.search-icon').addEventListener('click',function(e){
             break;
         }
     }
+
     if(found){
         
         location.href=`product.html?id=${found._id}`
@@ -74,6 +95,7 @@ document.querySelector('.search-icon').addEventListener('click',function(e){
 }
 
 
+
 function emptySuggestion(){
     let suggestion=document.querySelector('.suggestion');
     let childArrayLength=suggestion.children.length;
@@ -81,6 +103,9 @@ function emptySuggestion(){
           suggestion.children[0].remove();
     }
 }
+
+
+
 
 function dropDown(){
     document.querySelector('.drop-down').addEventListener('click',function(e){
@@ -109,6 +134,29 @@ function dropDown(){
             else{
              location.href=`all_product.html?category=${a.innerHTML}`;
             }
+        })
+    }
+
+    document.querySelector('.drop-down-author').addEventListener('click',function(e){
+        if(e.target.classList[0]=='drop-demo-author'){
+            
+        let drop= document.querySelector('.drop-content-author');
+        if(drop.classList[1]=='hide'){
+        drop.classList.remove('hide');
+        document.querySelector('#arrow-author').style.transform='rotate(180deg)';
+        }
+        else{
+            drop.classList.add('hide');
+            document.querySelector('#arrow-author').style.transform='rotate(0deg)';
+        }
+    }
+        
+    })  
+
+    let dropItemAuthor=document.querySelectorAll(".drop-item-author");
+    for(let a of dropItemAuthor){
+        a.addEventListener('click',function(e){
+           location.href=`all_product.html?author=${a.innerHTML}`;
         })
     }
 

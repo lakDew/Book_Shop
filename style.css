@@ -113,6 +113,16 @@ border-right:8px solid transparent;
 transition: 0.5s linear;
 
 }
+#arrow-author{
+    display: inline-block;
+    height: 0px;
+    width: 0px;
+    border-top:8px solid  white;
+    border-left:8px solid transparent;
+    border-right:8px solid transparent;
+    transition: 0.5s linear;
+    
+    }
 .nav-bar .left-sec{
     display: flex;
     color: white;
@@ -131,6 +141,11 @@ transition: 0.5s linear;
     align-items: center;
     position: relative;
 }
+.nav-bar .left-sec .drop-down-author{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
 
 .nav-bar{
     margin-top: 5px;
@@ -142,6 +157,7 @@ transition: 0.5s linear;
 }
 .nav-bar .right-sec{
     width: 55px;
+    cursor: pointer;
 
 } 
 .nav-bar .right-sec img{
@@ -155,10 +171,28 @@ transition: 0.5s linear;
 .drop-down:hover .drop-content{
     font-weight: normal;
 }
+.drop-down-author:hover .drop-content-author{
+    font-weight: normal;
+}
  .drop-content:hover p{
    font-weight: normal;
 }
+.drop-content-author:hover p{
+    font-weight: normal;
+ }
 .nav-bar .left-sec .drop-content{
+    position: absolute;
+    background-color: #f3f2f2;
+    top:48px;
+    left: 0px;
+    color: #E42B26;
+    width: 250px;
+    padding-top: 10px ;
+    box-shadow: 0px 0px 7px 2px #E42B26;
+    transition: 0.5s linear;
+    transform-origin: top;
+}
+.nav-bar .left-sec .drop-content-author{
     position: absolute;
     background-color: #f3f2f2;
     top:48px;
@@ -177,7 +211,18 @@ transition: 0.5s linear;
     font-family: 'Caveat Brush', cursive;
     cursor: pointer;
 }
+.nav-bar .left-sec .drop-content-author .drop-item-author{
+    padding: 10px 10px;
+    font-size: 19px;
+    border-bottom: 1px solid #E42B26;
+    font-family: 'Caveat Brush', cursive;
+    cursor: pointer;
+}
 .nav-bar .left-sec .drop-content .drop-item:hover{
+    transform: scaleY(1.2);
+    font-weight: 700;
+}
+.nav-bar .left-sec .drop-content-author .drop-item-author:hover{
     transform: scaleY(1.2);
     font-weight: 700;
 }
@@ -186,6 +231,12 @@ transition: 0.5s linear;
     transform: scaleY(0);
 }
 
+.banner{
+    margin-top: 10px;
+}
+.banner img{
+ width: 100%;
+}
 
 @media only screen and (max-width: 990px) {
    
@@ -293,6 +344,16 @@ transition: 0.5s linear;
         padding-top: 10px ;
         box-shadow: 0px 0px 7px 2px #E42B26;
     }
+    .nav-bar .left-sec .drop-content-author{
+        position: absolute;
+        background-color: #f3f2f2;
+        top:42px;
+        left: 0px;
+        color: #E42B26;
+        width: 250px;
+        padding-top: 10px ;
+        box-shadow: 0px 0px 7px 2px #E42B26;
+    }
     #arrow{
         display: inline-block;
         height: 0px;
@@ -304,5 +365,16 @@ transition: 0.5s linear;
         
         
         }
+        #arrow-author{
+            display: inline-block;
+            height: 0px;
+            width: 0px;
+            border-top:6px solid  white;
+            border-left:6px solid transparent;
+            border-right:6px solid transparent;
+            transition: 0.5s linear;
+            
+            
+            }
    
   }
