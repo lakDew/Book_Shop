@@ -37,6 +37,7 @@
     border: none;
     font-size: 20px;
     
+    
 
 }
 .top-section .search-bar input::placeholder{
@@ -51,6 +52,7 @@
     font-weight: 600;
     background-color: #E42B26;
     padding: 10.5px 13px;
+    
     
 }
 
@@ -191,6 +193,7 @@ transition: 0.5s linear;
     box-shadow: 0px 0px 7px 2px #E42B26;
     transition: 0.5s linear;
     transform-origin: top;
+    z-index: 2;
 }
 .nav-bar .left-sec .drop-content-author{
     position: absolute;
@@ -203,6 +206,7 @@ transition: 0.5s linear;
     box-shadow: 0px 0px 7px 2px #E42B26;
     transition: 0.5s linear;
     transform-origin: top;
+    z-index: 2;
 }
 .nav-bar .left-sec .drop-content .drop-item{
     padding: 10px 10px;
@@ -237,7 +241,32 @@ transition: 0.5s linear;
 .banner img{
  width: 100%;
 }
+.fade{
+    opacity: 0.5;
+}
 
+.hero-banner{
+    margin: 10px 0px;
+    box-shadow: 0px 0px 4px 4px #d8d7d7;
+}
+.slick-dots{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+.slick-dots li button{
+    font-size: 0px;
+    height: 10px;
+    width: 10px;
+    background-color:rgb(59, 59, 138);
+    margin:  15px 10px;
+    border: none;
+    border-radius: 50%;
+
+}
+.slick-dots .slick-active button{
+    background-color:rgb(136, 134, 134);
+}
 @media only screen and (max-width: 990px) {
    
     .top-section .search-bar{
@@ -282,6 +311,17 @@ transition: 0.5s linear;
         align-items: center;
         justify-content: space-between;
         padding: 0px 10px;
+    }
+
+    .slick-dots li button{
+        font-size: 0px;
+        height: 10px;
+        width: 10px;
+        background-color:rgb(59, 59, 138);
+        margin:  10px 8px;
+        border: none;
+        border-radius: 50%;
+    
     }
   }
 

@@ -2,15 +2,28 @@
 
 $.get('https://where-is-my-book-services.onrender.com/api/products/product/all',function(data,status){
     console.log(data.allProducts);
-    searchBar(data.allProducts)
+    searchBar(data.allProducts);
 })
 
+$(".hero-banner").slick({
+    centerMode: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
+    arrows: false,
+    
+  }); 
+
+ 
 
 document.querySelector('body').addEventListener('click',function(e){
     if(e.target.classList[0]!='suggested_item'&&e.target.classList[0]!='search-field'&&e.target.classList[0]!='search-icon'){
         document.querySelector('.suggestion').classList.add('none');
         document.querySelector('input[type=text]').value='';
         emptySuggestion();
+        document.querySelector('.search-icon').classList.add('fade') 
 
     }
    
@@ -43,9 +56,11 @@ document.querySelector('.right-sec').addEventListener('mouseout',function(e){
 function searchBar(data){
 let search=document.querySelector('input[type=text]');
 search.addEventListener('input',function(e){
+    
    emptySuggestion();
    let suggestion=document.querySelector('.suggestion');
    let searchItem=e.target.value.toUpperCase();
+   itemFound(searchItem,data);
    if(searchItem.length==0){
      suggestion.classList.add('none')
    }
@@ -64,7 +79,8 @@ search.addEventListener('input',function(e){
         suggestion.classList.remove('none')
          let suggestItem=document.createElement('div');
          suggestItem.addEventListener('click',function(e){
-          search.value=suggestItem.innerHTML;
+           document.querySelector('.search-icon').classList.remove('fade') 
+           search.value=suggestItem.innerHTML;
            emptySuggestion();
            suggestion.classList.add('none')
          })
@@ -75,6 +91,16 @@ search.addEventListener('input',function(e){
 }
 })
 
+document.querySelector('.search-icon').addEventListener('mouseover',function(e){
+    for(a of this.classList){
+        if(a=='fade'){
+            this.style.cursor='auto';
+            return;
+        }
+    }
+    this.style.cursor='pointer';
+    
+})
 
 document.querySelector('.search-icon').addEventListener('click',function(e){
     let found;
@@ -84,17 +110,33 @@ document.querySelector('.search-icon').addEventListener('click',function(e){
             break;
         }
     }
-
+    
+    
+    
     if(found){
         
-        location.href=`product.html?id=${found._id}`
+        location.href=`product.html?id=${found._id}`;
+        search.value='';
+
     }
+
 
 })
 
 }
 
+function itemFound(searchItem,data){
+    
 
+    for(item of data){
+        if(item.name.toUpperCase()==searchItem){
+            document.querySelector('.search-icon').classList.remove('fade');
+            return;
+        }
+
+    }
+    document.querySelector('.search-icon').classList.add('fade');
+}
 
 function emptySuggestion(){
     let suggestion=document.querySelector('.suggestion');
