@@ -86,6 +86,7 @@
     border: 1px solid #E42B26;
     background-color:#f3f2f2;
     padding-top: 20px;
+    z-index: 2;
     
 }
 .suggested_item{
@@ -267,7 +268,135 @@ transition: 0.5s linear;
 .slick-dots .slick-active button{
     background-color:rgb(136, 134, 134);
 }
+.banner-bottom{
+    margin: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    
+}
+.banner-bottom-child{
+    display: flex;
+    justify-content: space-between;
+    width: 150%;
+    position: absolute;
+    /* right:0px; */
+    animation: move linear 15s infinite ;
+    
+}
+.banner-bottom-child .banner-item{
+    width: 5%;
+   text-align: center;
+    
+}
+@keyframes move{
+    0%{left:5%}
+    10%{left:-11%}
+    20%{left:-22%}
+    30%{left:-33%}
+    40%{left:-44%}
+    50%{left:-55%}
+    60%{left:-44%}
+    70%{left:-33%}
+    80%{left:-22%}
+    90%{left:-11%}
+    100%{left:5%}
+/*     
+    0%{left:0px}
+    50%{right: 0px}
+    100%{left: 0px} */
+}
+
+
+.banner-bottom-child .banner-item img{
+    width: 100%;
+}
+.all-books-wrapper{
+    padding: 20px 40px;
+}
+.all-books{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.all-books .all-book-item{
+    margin: 10px 13px;
+    width: 56%;
+    box-shadow: 0px 0px 12px 2px rgb(175, 175, 196);
+    cursor: pointer;
+}
+.all-books .all-book-item .book-img{
+    width: 100%;
+    
+}
+.all-books .all-book-item .book-name{
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.all-books .all-book-item .book-author{
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+.all-books .all-book-item .book-price{
+    margin:10px;
+}
+.all-books .all-book-item .book-price span:nth-child(1){
+   color: #E42B26;
+   font-weight: 600;
+   font-size: 16px;
+}
+.all-books .all-book-item .book-price span:nth-child(2){
+    font-size: 14px;
+    text-decoration: line-through;
+    margin-left: 10px;
+ }
+.all-books .all-book-item .book-img img{
+   display: block;
+   width: 80%;
+   margin: 20px auto;
+   aspect-ratio: 0.8;
+}
+.all-books-wrapper .all-book-heading{
+    display: flex;
+    margin: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-books-wrapper .all-book-heading p:nth-child(1){
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+}
+.all-books-wrapper .all-book-heading p:nth-child(2){
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+    background-color: #E42B26;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
 @media only screen and (max-width: 990px) {
+
+    .banner-bottom{
+        margin: 20px 0px;
+        overflow: hidden;
+        position: relative;
+        height: 140px;
+        background-color: antiquewhite;
+    }
+    .banner-bottom-child .banner-item{
+        width: 5%;
+       text-align: center;
+        
+    }
    
     .top-section .search-bar{
         display: flex;
@@ -277,9 +406,36 @@ transition: 0.5s linear;
         margin-right: 50px;
         margin-left: 50px;
     }
+
+    .all-books .all-book-item:nth-child(5){
+      display: none;
+    }
+    
+    .all-books .all-book-item{
+        margin: 10px 10px;
+        width: 50%;
+        box-shadow: 0px 0px 12px 2px rgb(175, 175, 196);
+        cursor: pointer;
+    }
+    .all-books-wrapper{
+        padding: 20px 20px;
+    }
   }
 
   @media only screen and (max-width: 760px) {
+
+    .banner-bottom{
+        margin: 20px 0px;
+        overflow: hidden;
+        position: relative;
+        height: 140px;
+        background-color: antiquewhite;
+    }
+    .banner-bottom-child .banner-item{
+        width: 6%;
+       text-align: center;
+        
+    }
     
     .top-section{
         display: flex;
@@ -323,9 +479,55 @@ transition: 0.5s linear;
         border-radius: 50%;
     
     }
+    .all-books-wrapper{
+        padding: 20px 5px;
+    }
+
+    .all-books-wrapper .all-book-heading{
+        display: flex;
+        margin: 10px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .all-books .all-book-item{
+        margin: 10px 7px;
+        width: 50%;
+        box-shadow: 0px 0px 12px 2px rgb(175, 175, 196);
+        cursor: pointer;
+    } 
+
+    .all-books-wrapper .all-book-heading p:nth-child(1){
+        font-size: 30px;
+        font-family: 'Dancing Script', cursive;
+    }
+    .all-books-wrapper .all-book-heading p:nth-child(2){
+        font-size: 16px;
+        font-family: 'Dancing Script', cursive;
+        background-color: #E42B26;
+        color: white;
+        padding: 3px 7px;
+        cursor: pointer;
+    }
   }
 
   @media only screen and (max-width: 560px){
+
+    .banner-bottom{
+        margin: 20px 0px;
+        overflow: hidden;
+        position: relative;
+        height: 120px;
+        background-color: antiquewhite;
+    }
+    .banner-bottom-child .banner-item{
+        width: 7%;
+       text-align: center;
+        
+    }
+    
+
     .top-section .search-bar{
         display: flex;
         width: auto;
@@ -416,5 +618,16 @@ transition: 0.5s linear;
             
             
             }
+
+            .all-books .all-book-item:nth-child(4){
+                display: none;
+              }
+
+              .all-books .all-book-item{
+                margin: 10px 5px;
+                width: 50%;
+                box-shadow: 0px 0px 12px 2px rgb(175, 175, 196);
+                cursor: pointer;
+            } 
    
   }
