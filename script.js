@@ -4,6 +4,7 @@ $.get('https://where-is-my-book-services.onrender.com/api/products/product/all',
     console.log(data.allProducts);
     searchBar(data.allProducts);
     allBookSection(data.allProducts)
+    trendingBookSection(data.allProducts)
 })
 
 $(".hero-banner").slick({
@@ -222,9 +223,16 @@ for(a of document.querySelectorAll('.banner-item')){
 
 function allBookSection(data){
 
+  document.querySelector('.all-books-wrapper .all-book-heading p:nth-child(2)').addEventListener('click',function(e){
+    location.href=`all_product.html?category=all`;
+  })
+
   for(let a=0;a<=4;a++){
    let div=document.createElement('div');
    div.classList.add('all-book-item');
+   div.addEventListener('click',function(e){
+    location.href=`product.html?id=${data[a]._id}`
+   })
 
    let bookImg=document.createElement('div');
    bookImg.classList.add('book-img');
@@ -273,15 +281,75 @@ function allBookSection(data){
   }
 }
 
-{/* <div class="all-book-item">
-<div class="book-img">
-    <img src="https://i.pinimg.com/originals/dd/64/da/dd64da585bc57cb05e5fd4d8ce873f57.png" alt="">
-</div>
-<p class="book-name"></p>
-<p class="book-author"></p>
-<p class="book-price">
-<span class="discount-price"></span>
-<span class="original-price"></span>
-</p>
 
-</div> */}
+
+function trendingBookSection(data){
+
+    document.querySelector('.trending-books-wrapper .trending-book-heading p:nth-child(2)').addEventListener('click',function(e){
+      location.href=`all_product.html?category=trending`;
+    })
+    let b=1;
+    let a=0;
+
+    while(b<6){
+
+     if(data[a].rating==5){
+     let div=document.createElement('div');
+     div.classList.add('trending-book-item');
+     div.addEventListener('click',function(e){
+        location.href=`product.html?id=${data[a]._id}`
+       })
+       
+     let bookImg=document.createElement('div');
+     bookImg.classList.add('book-img');
+     let img=document.createElement('img')
+     img.src=data[a].imageUrl;
+     bookImg.appendChild(img);
+     div.appendChild(bookImg);
+  
+     let bookName=document.createElement('p');
+     bookName.classList.add('book-name');
+     bookName.innerHTML=data[a].name;
+     div.appendChild(bookName);
+  
+     let bookAuthor=document.createElement('p');
+     bookAuthor.classList.add('book-author');
+     bookAuthor.innerHTML=data[a].author;
+     div.appendChild(bookAuthor);
+  
+     
+     let bookPrice=document.createElement('p');
+     bookPrice.classList.add('book-price');
+  
+     if(data[a].currentDiscount!=0){
+  
+     let discountPrice=document.createElement('span');
+     discountPrice.classList.add('discount-price');
+     discountPrice.innerHTML=`₹${(data[a].price-(data[a].price*data[a].currentDiscount/100)).toFixed()}`
+     bookPrice.appendChild(discountPrice)  
+  
+     let originalPrice=document.createElement('span');
+     originalPrice.classList.add('original-price');
+     originalPrice.innerHTML=`₹${data[a].price}`;
+     bookPrice.appendChild(originalPrice) ;
+  
+     
+     }
+     else{
+     let discountPrice=document.createElement('span');
+     discountPrice.classList.add('discount-price');
+     discountPrice.innerHTML=`₹${data[a].price}`
+     bookPrice.appendChild(discountPrice) 
+     }
+
+     div.appendChild(bookPrice);
+     document.querySelector('.trending-books').appendChild(div);
+
+     ++b;
+
+    }
+     ++a;
+  
+    }
+  } 
+  
