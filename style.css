@@ -462,6 +462,88 @@ transition: 0.5s linear;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+.best-books-wrapper{
+    padding: 20px 40px;
+}
+.best-books{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.best-books .best-book-item{
+    margin: 10px 13px;
+    width: 56%;
+    box-shadow: 0px 0px 12px 2px rgb(175, 175, 196);
+    cursor: pointer;
+}
+.best-books .best-book-item .book-img{
+    width: 100%;
+    
+}
+.best-books .best-book-item .book-name{
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.best-books .best-book-item .book-author{
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+.best-books .best-book-item .book-price{
+    margin:10px;
+}
+.best-books .best-book-item .book-price span:nth-child(1){
+   color: #E42B26;
+   font-weight: 600;
+   font-size: 16px;
+}
+.best-books .best-book-item .book-price span:nth-child(2){
+    font-size: 14px;
+    text-decoration: line-through;
+    margin-left: 10px;
+ }
+.best-books .best-book-item .book-img img{
+   display: block;
+   width: 80%;
+   margin: 20px auto;
+   aspect-ratio: 0.8;
+}
+.best-books-wrapper .best-book-heading{
+    display: flex;
+    margin: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.best-books-wrapper .best-book-heading p:nth-child(1){
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+}
+.best-books-wrapper .best-book-heading p:nth-child(2){
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+    background-color: #E42B26;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
 @media only screen and (max-width: 990px) {
 
     .banner-bottom{
@@ -513,6 +595,23 @@ transition: 0.5s linear;
           cursor: pointer;
       }
       .trending-books-wrapper{
+          padding: 20px 20px;
+      }
+
+
+
+
+      .best-books .best-book-item:nth-child(5){
+        display: none;
+      }
+      
+      .best-books .best-book-item{
+          margin: 10px 10px;
+          width: 50%;
+          box-shadow: 0px 0px 12px 2px rgb(175, 175, 196);
+          cursor: pointer;
+      }
+      .best-books-wrapper{
           padding: 20px 20px;
       }
   }
@@ -640,6 +739,48 @@ transition: 0.5s linear;
         padding: 3px 7px;
         cursor: pointer;
     }
+
+
+
+
+
+
+
+
+    .best-books-wrapper{
+        padding: 20px 5px;
+    }
+
+    .best-books-wrapper .best-book-heading{
+        display: flex;
+        margin: 10px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .best-books .best-book-item{
+        margin: 10px 7px;
+        width: 50%;
+        box-shadow: 0px 0px 12px 2px rgb(175, 175, 196);
+        cursor: pointer;
+    } 
+
+    .best-books-wrapper .best-book-heading p:nth-child(1){
+        font-size: 30px;
+        font-family: 'Dancing Script', cursive;
+    }
+    .best-books-wrapper .best-book-heading p:nth-child(2){
+        font-size: 16px;
+        font-family: 'Dancing Script', cursive;
+        background-color: #E42B26;
+        color: white;
+        padding: 3px 7px;
+        cursor: pointer;
+    }
+
+
+    
   }
 
   @media only screen and (max-width: 560px){
@@ -774,6 +915,21 @@ transition: 0.5s linear;
             } 
 
 
+
+
+
+
+
+            .best-books .best-book-item:nth-child(4){
+                display: none;
+              }
+
+              .best-books .best-book-item{
+                margin: 10px 5px;
+                width: 50%;
+                box-shadow: 0px 0px 12px 2px rgb(175, 175, 196);
+                cursor: pointer;
+            } 
             
    
   }

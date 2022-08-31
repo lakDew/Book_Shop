@@ -5,6 +5,7 @@ $.get('https://where-is-my-book-services.onrender.com/api/products/product/all',
     searchBar(data.allProducts);
     allBookSection(data.allProducts)
     trendingBookSection(data.allProducts)
+    bestBookSection(data.allProducts)
 })
 
 $(".hero-banner").slick({
@@ -344,6 +345,78 @@ function trendingBookSection(data){
 
      div.appendChild(bookPrice);
      document.querySelector('.trending-books').appendChild(div);
+
+     ++b;
+
+    }
+     ++a;
+  
+    }
+  } 
+  
+
+
+  function bestBookSection(data){
+
+    document.querySelector('.best-books-wrapper .best-book-heading p:nth-child(2)').addEventListener('click',function(e){
+      location.href=`all_product.html?category=best`;
+    })
+    let b=1;
+    let a=0;
+
+    while(b<6){
+
+     if(data[a].price>350){
+     let div=document.createElement('div');
+     div.classList.add('best-book-item');
+     div.addEventListener('click',function(e){
+        location.href=`product.html?id=${data[a]._id}`
+       })
+       
+     let bookImg=document.createElement('div');
+     bookImg.classList.add('book-img');
+     let img=document.createElement('img')
+     img.src=data[a].imageUrl;
+     bookImg.appendChild(img);
+     div.appendChild(bookImg);
+  
+     let bookName=document.createElement('p');
+     bookName.classList.add('book-name');
+     bookName.innerHTML=data[a].name;
+     div.appendChild(bookName);
+  
+     let bookAuthor=document.createElement('p');
+     bookAuthor.classList.add('book-author');
+     bookAuthor.innerHTML=data[a].author;
+     div.appendChild(bookAuthor);
+  
+     
+     let bookPrice=document.createElement('p');
+     bookPrice.classList.add('book-price');
+  
+     if(data[a].currentDiscount!=0){
+  
+     let discountPrice=document.createElement('span');
+     discountPrice.classList.add('discount-price');
+     discountPrice.innerHTML=`₹${(data[a].price-(data[a].price*data[a].currentDiscount/100)).toFixed()}`
+     bookPrice.appendChild(discountPrice)  
+  
+     let originalPrice=document.createElement('span');
+     originalPrice.classList.add('original-price');
+     originalPrice.innerHTML=`₹${data[a].price}`;
+     bookPrice.appendChild(originalPrice) ;
+  
+     
+     }
+     else{
+     let discountPrice=document.createElement('span');
+     discountPrice.classList.add('discount-price');
+     discountPrice.innerHTML=`₹${data[a].price}`
+     bookPrice.appendChild(discountPrice) 
+     }
+
+     div.appendChild(bookPrice);
+     document.querySelector('.best-books').appendChild(div);
 
      ++b;
 
