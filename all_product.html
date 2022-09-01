@@ -1,12 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./allproduct.css">
+    <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    very good!
+<header>
+
+    <div class="top-section">
+          
+        <div class="logo">
+            <img src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/logo-new.png" alt="">
+        </div>
+        <div class="search-bar">
+            <input class="search-field" type="text" id="search-input" placeholder="search by title,author">
+            <i class="search-icon fade fa-solid fa-magnifying-glass"></i>
+            <div id="suggest" class="suggestion none"></div>
+        </div>
+        
+        <div class="right-section">
+        <div class="profile">
+            <i class="fa-regular fa-user"></i>
+        </div>
+        <div class="cart-logo">
+            <i class="fa-regular fa-cart-shopping"></i>
+        </div>
+        </div>
+       </div>
+
+
+       <div class="nav-bar">
+        <div class="left-sec">
+        <div  class="drop-down drop-demo"><span class="drop-demo">Book</span><span class="drop-demo" id="arrow"></span>
+        <div class="drop-content hide">
+            <p class="drop-item">All Books</p>
+            <p class="drop-item">Fiction</p>
+            <p class="drop-item">Business</p>
+            <p class="drop-item">Reference</p>
+            <p class="drop-item">Fantasy</p>
+        </div>
+        </div>
+        <div  class="drop-down-author drop-demo-author"><span class="drop-demo-author">Author</span><span class="drop-demo-author" id="arrow-author"></span>
+            <div class="drop-content-author hide">
+                <p class="drop-item-author">John Pierce</p>
+                <p class="drop-item-author">Cynthia Sweeney</p>
+                <p class="drop-item-author">Emma Byrne</p>
+                <p class="drop-item-author">Toni Morrison</p>
+                
+            </div>
+            </div>
+        
+        <div>Best Seller</div>
+        </div>
+        <div class="right-sec">
+            <img src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/android_withouthover.svg" alt="">
+        </div>
+
+       </div>
+
+</header>
+
+<p id="heading">Best Seller</p>
+<main>
+    
+    <div class="filter-left">
+
+        <p>Refine Your Search</p>
+        <label for="price-range">Price Range</label>
+        <input type="range" id="price-range" min="0" max="1000">
+        <p>0-1000</p>
+
+        <label for="discount-range">Discount Range</label>
+        <input type="range" id="discount-range" min="0" max="90">
+        <p>0-90</p>
+
+        <p>Language</p>
+        <div>
+        <label for="all">All</label>
+        <input type="radio" name="language" id="all">
+    </div>
+<div>
+        <label for="english">English</label>
+        <input type="radio" name="language" id="english">
+    </div>
+<div>
+        <label for="hindi">Hindi</label>
+        <input type="radio" name="language" id="hindi">
+    </div>
+
+
+    </div>
+
+
+    <div class="book-section-wrapper">
+
+
+        <div class="book-section-heading">
+
+            <div class="result">
+             <p>202 books found</p>
+            </div>
+
+
+            <div class="filter-section">
+                <div><span>Sort By:</span></div>
+                <div class="filter">
+                    <span>Relevence</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <div class="filter-drop hide">
+
+                        <p>Relevence</p>
+                        <p>Price-Low to High</p>
+                        <p>Price-High to Low</p>
+                        <p>Discount</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="book-section">
+
+        </div>
+
+
+    </div>
+</main>
+
+
+<script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="./allproduct.js"></script>
 </body>
 </html>
